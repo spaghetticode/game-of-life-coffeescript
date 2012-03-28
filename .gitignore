@@ -1,0 +1,3 @@
+public/javascripts/*.js
+spec/javascripts/*.js
+spec/javascripts/helpers/SpecHelper.js
