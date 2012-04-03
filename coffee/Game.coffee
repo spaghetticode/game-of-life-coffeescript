@@ -1,31 +1,26 @@
 class Game
-  # cells are alive on the board when their value
-  # is 1, dead when 0
-
-  constructor: (width, height, liveCells) ->
+  constructor: (height, width, liveCells) ->
     @liveCells = liveCells
-    @width     = width
     @height    = height
-    @board     = @initBoard()
-    @setLiveCells()
+    @width     = width
+    @board     = new Board(@height, @width)
+    @newBoard  = new Board(@height, @width)
+    @initLiveCells()
 
-  initBoard: ->
-    rows = []
-    for x in [1..@width]
-      row = []
-      for y in [1..@height]
-        row.push 0
-      rows.push row
-    rows
+  initLiveCells: ->
+    for coord in @liveCells
+      @board.setValue(coord[0], coord[1], Board.LIVE)
 
-  setLiveCells: ->
-    for coords in @liveCells
-      @board[coords[1]][coords[0]] = 1
+  setNextStatus: (y, x) ->
+    count  = @board.liveNeighborsCount(y, x)
+    status = if 2 <= count <= 3 then Board.LIVE else Board.DEAD
+    @newBoard.setValue(y, x, status)
 
-  toString: ->
-    rows = []
-    for row in @board
-      rows.push row.join('').replace(/0/g, ' ').replace(/1/g, '@')
-    rows.join('\n')
+  tick: ->
+    @newBoard = new Board(@height, @width)
+    for y in [0..@height-1]
+      for x in [0..@width-1]
+        @setNextStatus(y, x)
+    # Replace the old board with the new one
 
-window.Game = Game
+window.Game  = Game
