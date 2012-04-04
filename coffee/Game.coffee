@@ -1,4 +1,7 @@
 class Game
+  @BORN = [3]
+  @LIVE = [2,3]
+
   constructor: (height, width, liveCells) ->
     @liveCells = liveCells
     @height    = height
@@ -13,7 +16,10 @@ class Game
 
   setNextStatus: (y, x) ->
     count  = @board.liveNeighborsCount(y, x)
-    status = if 2 <= count <= 3 then Board.LIVE else Board.DEAD
+    if @board.getValue(y, x) is Board.DEAD
+      status = if Game.BORN.indexOf(count) >= 0 then Board.LIVE else Board.DEAD
+    else
+      status = if Game.LIVE.indexOf(count) >= 0 then Board.LIVE else Board.DEAD
     @newBoard.setValue(y, x, status)
 
   tick: ->
@@ -21,6 +27,6 @@ class Game
     for y in [0..@height-1]
       for x in [0..@width-1]
         @setNextStatus(y, x)
-    # Replace the old board with the new one
+    @board = @newBoard
 
 window.Game  = Game

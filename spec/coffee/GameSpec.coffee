@@ -16,9 +16,9 @@ describe 'Game', ->
     expect(game.liveCells).toEqual [[1,1], [2,1], [3,1]]
 
   it 'populates board with cells in expected positions', ->
-    expect(game.board.board[1][1]).toBe alive
-    expect(game.board.board[2][1]).toBe alive
-    expect(game.board.board[3][1]).toBe alive
+    expect(game.board.getValue(1,1)).toBe alive
+    expect(game.board.getValue(2,1)).toBe alive
+    expect(game.board.getValue(3,1)).toBe alive
 
   it 'board has same items as newBoard', ->
     expect(game.board.length).toBe game.newBoard.length
@@ -36,10 +36,10 @@ describe 'Game', ->
         expect(game.newBoard.board[0][4]).toBe dead
 
     describe 'when cell has 2 live neighbors', ->
-      it 'lives', ->
-        spyOn(game.board, 'liveNeighborsCount').andReturn 2
-        game.setNextStatus(0,1)
-        expect(game.newBoard.getValue(0,1)).toBe alive
+      # it 'lives', ->
+      #   spyOn(game.board, 'liveNeighborsCount').andReturn 2
+      #   game.setNextStatus(0,1)
+      #   expect(game.newBoard.getValue(0,1)).toBe alive
 
     describe 'when cell has 3 live neighbors', ->
       it 'lives', ->
@@ -52,14 +52,14 @@ describe 'Game', ->
         spyOn(game.board, 'liveNeighborsCount').andReturn 4
         expect(game.setNextStatus(2,2)).toBe dead
 
-    describe '#tick', ->
-      it 'make expected cells live', ->
-        game.tick()
-        expect(game.newBoard.getValue(2,0)).toBe alive
-        expect(game.newBoard.getValue(2,1)).toBe alive
-        expect(game.newBoard.getValue(2,2)).toBe alive
+  describe '#tick', ->
+    it 'make expected cells live', ->
+      game.tick()
+      expect(game.newBoard.getValue(2,0)).toBe alive
+      expect(game.newBoard.getValue(2,1)).toBe alive
+      expect(game.newBoard.getValue(2,2)).toBe alive
 
-      it 'make expected cells dead', ->
-        game.tick()
-        expect(game.newBoard.getValue(1,1)).toBe dead
-        expect(game.newBoard.getValue(3,1)).toBe dead
+    it 'make expected cells dead', ->
+      game.tick()
+      expect(game.newBoard.getValue(1,1)).toBe dead
+      expect(game.newBoard.getValue(3,1)).toBe dead
