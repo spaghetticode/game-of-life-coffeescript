@@ -1,4 +1,6 @@
-class ConsoleAdapter
+Game = require './Game'
+
+module.exports = class ConsoleAdapter
   constructor: (opts) ->
     @opts       = opts
     @iteration  = 0
@@ -27,6 +29,3 @@ class ConsoleAdapter
 
   initGame: ->
     new Game(@opts.height, @opts.width, @initialPattern())
-
-
-window.ConsoleAdapter = ConsoleAdapter

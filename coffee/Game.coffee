@@ -1,4 +1,6 @@
-class Game
+Board = require './Board'
+
+module.exports = class Game
   @BORN = [3]
   @LIVE = [2,3]
 
@@ -28,6 +30,3 @@ class Game
       for x in [0..@width-1]
         @setNextStatus(y, x)
     @board = @newBoard
-
-
-window.Game = Game

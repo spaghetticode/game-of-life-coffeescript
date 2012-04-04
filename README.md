@@ -7,6 +7,7 @@ My goal for this funny exercise is to increase my confidence with TDD on
 javascript.
 
 usage:
+
 ```
-  coffee index.coffee
+  cd coffee && coffee index.coffee
 ```

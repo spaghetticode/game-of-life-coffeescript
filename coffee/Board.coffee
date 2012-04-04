@@ -1,4 +1,4 @@
-class Board
+module.exports = class Board
   @LIVE = 1
   @DEAD = 0
 
@@ -58,6 +58,3 @@ class Board
     for row in @board
       rows.push row.join('').replace(/0/g, ' ').replace(/1/g, '@')
     rows.join('\n')
-
-
-window.Board = Board
