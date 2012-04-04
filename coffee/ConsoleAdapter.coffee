@@ -8,8 +8,8 @@ class ConsoleAdapter
 
 
   initialPattern: ->
-    #[[2,1], [2,2], [2,3], [1,3], [0,2]] #glider
-    [[1,2], [1,3], [1,4]] # oscillator
+    [[2,1], [2,2], [2,3], [1,3], [0,2]] #glider
+#    [[1,2], [1,3], [1,4]] # oscillator
 
   play: ->
     id = setInterval (=>
@@ -27,5 +27,6 @@ class ConsoleAdapter
 
   initGame: ->
     new Game(@opts.height, @opts.width, @initialPattern())
+
 
 window.ConsoleAdapter = ConsoleAdapter

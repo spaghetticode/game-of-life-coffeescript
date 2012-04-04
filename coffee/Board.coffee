@@ -59,4 +59,5 @@ class Board
       rows.push row.join('').replace(/0/g, ' ').replace(/1/g, '@')
     rows.join('\n')
 
+
 window.Board = Board

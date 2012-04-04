@@ -29,4 +29,5 @@ class Game
         @setNextStatus(y, x)
     @board = @newBoard
 
-window.Game  = Game
+
+window.Game = Game

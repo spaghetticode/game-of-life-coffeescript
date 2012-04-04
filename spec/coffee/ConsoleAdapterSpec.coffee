@@ -17,7 +17,7 @@ describe 'ConsoleAdapter', ->
 
   describe '#initialPattern', ->
     it 'returns expected array', ->
-      expect(adapter.initialPattern()).toEqual [[1,2], [1,3], [1,4]]
+      expect(adapter.initialPattern()).toEqual [[2,1], [2,2], [2,3], [1,3], [0,2]]
 
   describe '#initGame', ->
     it 'returns a game instance', ->
