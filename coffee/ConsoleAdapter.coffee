@@ -1,6 +1,6 @@
 Game = require './Game'
 
-module.exports = class ConsoleAdapter
+class ConsoleAdapter
   constructor: (opts) ->
     @opts       = opts
     @iteration  = 0
@@ -24,8 +24,18 @@ module.exports = class ConsoleAdapter
 
   redraw: ->
     console.log '\u001B[2J\u001B[0;0f'
-    console.log @game.board.toString()
+    console.log @formatted()
     @game.tick()
 
   initGame: ->
     new Game(@opts.height, @opts.width, @initialPattern())
+
+  formatted: ->
+    rows = []
+    for row in @game.board.board
+      rows.push row.join('').replace(/0/g, ' ').replace(/1/g, '@')
+    rows.join('\n')
+
+
+module.exports = ConsoleAdapter
+#window.ConsoleAdapter = ConsoleAdapter

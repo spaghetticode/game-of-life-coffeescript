@@ -3,8 +3,6 @@ describe 'ConsoleAdapter', ->
 
   beforeEach ->
     adapter = new ConsoleAdapter(width: 20, height: 10, iterations: 10)
-    # remove console output
-    console.log = ->
 
   it 'assings iterations', ->
     expect(adapter.iterations).toBe 10
@@ -34,3 +32,9 @@ describe 'ConsoleAdapter', ->
       adapter.redraw()
       expect(console.log).toHaveBeenCalled()
 
+  describe '#formatted', ->
+    it 'returns a string', ->
+      expect(typeof adapter.formatted()).toBe 'string'
+
+    it 'has expected length', ->
+      expect(adapter.formatted().replace(/\n/g, '').length).toBe 200

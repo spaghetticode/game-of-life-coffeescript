@@ -84,10 +84,3 @@ describe 'Board', ->
     describe 'when cell has 1 live neighbor', ->
       it 'returns 1', ->
         expect(board.liveNeighborsCount(4,1)).toBe 1
-
-  describe '#toString', ->
-    it 'returns a string', ->
-      expect(typeof board.toString()).toBe 'string'
-
-    it 'has expected length', ->
-      expect(board.toString().replace(/\n/g, '').length).toBe 200

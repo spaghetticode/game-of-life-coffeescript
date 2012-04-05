@@ -1,4 +1,4 @@
-module.exports = class Board
+class Board
   @LIVE = 1
   @DEAD = 0
 
@@ -53,8 +53,6 @@ module.exports = class Board
   nextY: (y) ->
     if y+1 >= @height then y+1-@height else y+1
 
-  toString: ->
-    rows = []
-    for row in @board
-      rows.push row.join('').replace(/0/g, ' ').replace(/1/g, '@')
-    rows.join('\n')
+
+module.exports = Board
+# window.Board = Board
