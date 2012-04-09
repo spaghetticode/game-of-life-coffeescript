@@ -12,8 +12,18 @@ in the Game and Board classes, while the visualization is handled via adapters
 such as the included ConsoleAdapter, so later I can develop more adapters
 without cluttering the code in the game classes.
 
-usage:
+### Usage
 
 ```
   cd coffee && coffee index.coffee
+```
+
+### Specs
+
+The game is tested with the jasmine framework. To run the specs you must install
+the jasmine-node npm package, if you haven't already.
+
+```
+  npm install jasmine-node -g
+  jasmine-node spec --coffee
 ```

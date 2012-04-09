@@ -1,3 +1,5 @@
+Board = require '../../coffee/Board'
+
 describe 'Board', ->
   alive = Board.LIVE
   dead  = Board.DEAD
