@@ -1,0 +1,21 @@
+{
+  "author": "Andrea Longhi (http://spaghetticode.it)",
+  "name": "game-of-life",
+  "description": "coffeescript version of Conway's Game of Life",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spaghetticode/game-of-life-coffeescript.git"
+  },
+  "scripts": {
+    "test": "jasmine-node spec --coffee"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine-node": ""
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
