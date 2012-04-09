@@ -1,5 +1,7 @@
 ## Conway's Game of Life - Coffeescript
 
+[![Build Status](https://secure.travis-ci.org/spaghetticode/game-of-life-coffeescript.png)](http://travis-ci.org/spaghetticode/game-of-life-coffeescript)
+
 This is is my first attempt to build a coffeescript version of Conway's Game of
 Life. It comes after my ruby version, so it will probably look like that one in
 the end.
