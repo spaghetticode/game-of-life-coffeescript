@@ -10,7 +10,9 @@
   "scripts": {
     "test": "jasmine-node spec --coffee"
   },
-  "dependencies": {},
+  "dependencies": {
+    "coffee-script": ""
+  },
   "devDependencies": {
     "jasmine-node": ""
   },
