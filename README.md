@@ -22,10 +22,9 @@ without cluttering the code in the game classes.
 
 ### Specs
 
-The game is tested with the jasmine framework. To run the specs you must install
-the jasmine-node npm package, if you haven't already.
+The game is tested with the jasmine framework. To run the specs in terminal just
+run
 
 ```bash
-  npm install jasmine-node -g
-  jasmine-node spec --coffee
+  npm test
 ```
