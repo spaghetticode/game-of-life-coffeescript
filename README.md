@@ -16,7 +16,7 @@ without cluttering the code in the game classes.
 
 ### Usage
 
-```
+```bash
   cd coffee && coffee index.coffee
 ```
 
@@ -25,7 +25,7 @@ without cluttering the code in the game classes.
 The game is tested with the jasmine framework. To run the specs you must install
 the jasmine-node npm package, if you haven't already.
 
-```
+```bash
   npm install jasmine-node -g
   jasmine-node spec --coffee
 ```

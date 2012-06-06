@@ -1,3 +1,4 @@
+Game = require '../../coffee/Game'
 ConsoleAdapter = require '../../coffee/ConsoleAdapter'
 
 describe 'ConsoleAdapter', ->
@@ -20,8 +21,8 @@ describe 'ConsoleAdapter', ->
       expect(adapter.initialPattern()).toEqual [[2,1], [2,2], [2,3], [1,3], [0,2]]
 
   describe '#initGame', ->
-    # it 'returns a game instance', ->
-    #   expect(adapter.initGame()).toBeInstanceOf Game
+    it 'returns a game instance', ->
+      expect(adapter.initGame()).toBeInstanceOf Game
 
   describe '#redraw', ->
     it 'make game tick', ->

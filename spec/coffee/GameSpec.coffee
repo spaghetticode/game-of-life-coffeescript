@@ -1,6 +1,9 @@
 Board = require '../../coffee/Board'
 Game = require '../../coffee/Game'
 
+jasmine.Matchers::toBeInstanceOf = (expected) ->
+  @actual instanceof expected
+
 describe 'Game', ->
   alive = Board.LIVE
   dead  = Board.DEAD
