@@ -14,6 +14,15 @@ in the Game and Board classes, while the visualization is handled via adapters
 such as the included ConsoleAdapter, so later I can develop more adapters
 without cluttering the code in the game classes.
 
+
+### Install
+
+Run in terminal:
+```bash
+  npm install game-of-life
+```
+
+
 ### Usage
 
 ```bash
