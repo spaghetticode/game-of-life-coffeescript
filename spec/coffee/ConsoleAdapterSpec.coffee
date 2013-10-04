@@ -5,6 +5,7 @@ describe 'ConsoleAdapter', ->
   adapter = null
 
   beforeEach ->
+    spyOn(console, 'log')
     adapter = new ConsoleAdapter(width: 20, height: 10, iterations: 10)
 
   it 'assings iterations', ->
@@ -31,7 +32,6 @@ describe 'ConsoleAdapter', ->
       expect(adapter.game.tick).toHaveBeenCalled()
 
     it 'outputs to the console', ->
-      spyOn(console, 'log')
       adapter.redraw()
       expect(console.log).toHaveBeenCalled()
 
