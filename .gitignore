@@ -2,3 +2,4 @@ public/javascripts/*.js
 spec/javascripts/*.js
 spec/javascripts/helpers/SpecHelper.js
 npm-debug.log
+node_modules/
